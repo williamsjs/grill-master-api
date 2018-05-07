@@ -1,0 +1,2 @@
+class MeatCategory < ApplicationRecord
+end
