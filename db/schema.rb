@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_06_195237) do
+ActiveRecord::Schema.define(version: 2018_05_07_115546) do
 
   create_table "ingredients", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "meat_categories", force: :cascade do |t|
+    t.integer "meat_type_id"
+    t.integer "meat_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["meat_id"], name: "index_meat_categories_on_meat_id"
+    t.index ["meat_type_id"], name: "index_meat_categories_on_meat_type_id"
+  end
+
+  create_table "meat_types", force: :cascade do |t|
+    t.string "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
