@@ -15,7 +15,7 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.create!(recipe_params)
 
-    render json: @recipe, statue: :created
+    render json: @recipe, status: :created
   end
 
   def update
