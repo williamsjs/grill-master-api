@@ -13,8 +13,9 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.new(user: current_user)
-    @recipe.save!(recipe_params)
+    @recipe = Recipe.new(recipe_params)
+    @recipe.user = current_user
+    @recipe.save!
 
     render json: @recipe, status: :created
   end
