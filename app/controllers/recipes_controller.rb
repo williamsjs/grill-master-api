@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :update, :destroy]
 
   def index
-    @recipes = Recipe.all
+    @recipes = params[:user_id] ? User.find(params[:user_id]).recipes : Recipe.all
 
     render json: @recipes, status: :ok
   end
