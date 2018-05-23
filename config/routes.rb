@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   post 'user_token' => 'user_token#create'
   post 'users/sign_up' => 'users#sign_up'
-  get 'users/show' => 'users#show'
+  get 'my_user' => 'users#my_user'
 
   resources :recipes do
     resources :ingredients
