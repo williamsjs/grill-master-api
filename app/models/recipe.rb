@@ -1,7 +1,6 @@
 class Recipe < ApplicationRecord
   belongs_to :user
-  has_many :recipe_ingredients
-  has_many :ingredients, through: :recipe_ingredients
+  has_many :ingredients
   has_many :instructions
 
   validates :name, presence: true
